@@ -1,0 +1,17 @@
+[package]
+name = "multorum"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { workspace = true, features = ["rt-multi-thread", "macros"] }
+rkyv = { workspace=true }
+uuid = { workspace=true }
+
+[workspace]
+members = ["client"]
+
+[workspace.dependencies]
+tokio = { version = "1.40.0" }
+rkyv = { version="0.8.8", features = ["default", "uuid-1"] }
+uuid = { version="1.10.0", features = ["fast-rng"] }
